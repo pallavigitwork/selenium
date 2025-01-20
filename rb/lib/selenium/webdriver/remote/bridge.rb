@@ -390,7 +390,6 @@ module Selenium
         end
 
         def cookie(name)
-          raise Error::ArgumentError, 'Cookie name cannot be null or empty' if name.nil? || name.empty?
           execute :get_cookie, name: name
         end
 
