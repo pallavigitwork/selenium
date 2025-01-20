@@ -242,6 +242,11 @@ module Selenium
           expect(driver.manage.all_cookies.find { |c| c[:name] == 'foo' }).to be_nil
         end
 
+        it 'throws error when cookie name is empty string' do
+          expect { driver.manage.delete_cookie('') }
+            .to raise_exception(Error::ArgumentError)
+        end
+
         it 'deletes all' do
           driver.manage.add_cookie name: 'foo', value: 'bar'
           driver.manage.add_cookie name: 'bar', value: 'foo'
