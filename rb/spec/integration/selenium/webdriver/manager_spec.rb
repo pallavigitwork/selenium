@@ -244,7 +244,7 @@ module Selenium
 
         it 'throws error when cookie name is empty string' do
           expect { driver.manage.delete_cookie('') }
-            .to raise_exception(Error::ArgumentError)
+            .to raise_exception(ArgumentError)
         end
 
         it 'deletes all' do

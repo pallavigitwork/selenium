@@ -385,7 +385,7 @@ module Selenium
         end
 
         def delete_cookie(name)
-          raise Error::ArgumentError, 'Cookie name cannot be null or empty' if name.nil? || name.empty?
+          raise ArgumentError, 'Cookie name cannot be null or empty' if name.nil? || name.empty?
           execute :delete_cookie, name: name
         end
 
